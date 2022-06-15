@@ -1,0 +1,16 @@
+<h1>Malls listing page</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @malls.each do |mall| %>
+    <tr>
+      <td><%= mall.location%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

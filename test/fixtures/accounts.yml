@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accoutnumber: 1
+  ifsccode: 1
+  accoutholdername: MyString
+  branchname: MyString
+
+two:
+  accoutnumber: 1
+  ifsccode: 1
+  accoutholdername: MyString
+  branchname: MyString
