@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_15_101452) do
+ActiveRecord::Schema.define(version: 2022_06_16_102354) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "accoutnumber"
@@ -53,11 +53,52 @@ ActiveRecord::Schema.define(version: 2022_06_15_101452) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
+  create_table "cabins", force: :cascade do |t|
+    t.integer "count"
+  end
+
+  create_table "cabins_offices", id: false, force: :cascade do |t|
+    t.integer "office_id", null: false
+    t.integer "cabin_id", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+  end
+
+  create_table "categories_products", id: false, force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "category_id", null: false
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "place"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "consumers", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.text "address"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "age"
+  end
+
+  create_table "customers_procuts", id: false, force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "procut_id", null: false
+  end
+
+  create_table "delllaptops", force: :cascade do |t|
+    t.text "description"
+    t.integer "cost"
+    t.integer "ram"
   end
 
   create_table "doctors", force: :cascade do |t|
@@ -93,7 +134,19 @@ ActiveRecord::Schema.define(version: 2022_06_15_101452) do
     t.integer "distance"
   end
 
+  create_table "mobiles", force: :cascade do |t|
+    t.string "name"
+    t.integer "ram"
+    t.integer "storage"
+    t.integer "cost"
+  end
+
   create_table "novels", force: :cascade do |t|
+  end
+
+  create_table "offices", force: :cascade do |t|
+    t.string "place"
+    t.integer "countofworkers"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -102,6 +155,27 @@ ActiveRecord::Schema.define(version: 2022_06_15_101452) do
     t.string "health_issue"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "procuts", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "Partnumber"
+    t.text "Details"
+    t.integer "consumer_id", null: false
+    t.index ["consumer_id"], name: "index_procuts_on_consumer_id"
+  end
+
+  create_table "productsofstore", force: :cascade do |t|
+    t.string "identity"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "Price"
+  end
+
+  create_table "sentences", force: :cascade do |t|
+    t.integer "countofletters"
   end
 
   create_table "students", force: :cascade do |t|
@@ -117,11 +191,21 @@ ActiveRecord::Schema.define(version: 2022_06_15_101452) do
     t.integer "teacher_id", null: false
   end
 
+  create_table "tables", force: :cascade do |t|
+    t.string "categories"
+    t.string "name"
+    t.string "type"
+  end
+
   create_table "teachers", force: :cascade do |t|
     t.string "name"
     t.string "subject"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.string "length"
   end
 
   create_table "users", force: :cascade do |t|
@@ -137,4 +221,5 @@ ActiveRecord::Schema.define(version: 2022_06_15_101452) do
   add_foreign_key "appointments", "patients"
   add_foreign_key "books", "authors"
   add_foreign_key "employees", "Companies"
+  add_foreign_key "procuts", "consumers"
 end
