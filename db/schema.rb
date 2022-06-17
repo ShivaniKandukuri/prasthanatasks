@@ -8,9 +8,9 @@
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
-# It's strongly recommended that you check this file into your version control system.
-
+# It's strongly recommended that you check this file into your version control system
 ActiveRecord::Schema.define(version: 2022_06_16_102354) do
+ActiveRecord::Schema.define(version: 2022_06_17_112839) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "accoutnumber"
@@ -121,6 +121,20 @@ ActiveRecord::Schema.define(version: 2022_06_16_102354) do
     t.index ["Company_id"], name: "index_employees_on_Company_id"
   end
 
+  create_table "hosts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "age"
+    t.string "dateofbirth"
+    t.string "email"
+    t.string "phonenumber"
+    t.string "pincode"
+    t.string "place"
+    t.string "education"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "magazines", force: :cascade do |t|
     t.string "name"
     t.text "descriptoin"
@@ -165,6 +179,16 @@ ActiveRecord::Schema.define(version: 2022_06_16_102354) do
     t.integer "consumer_id", null: false
     t.index ["consumer_id"], name: "index_procuts_on_consumer_id"
   end
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price"
+    t.integer "weight"
+    t.boolean "in_stock"
+    t.date "expiration_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 
   create_table "productsofstore", force: :cascade do |t|
     t.string "identity"
@@ -172,6 +196,22 @@ ActiveRecord::Schema.define(version: 2022_06_16_102354) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "Price"
+  end
+
+  create_table "professors", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.text "bio"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sentences", force: :cascade do |t|
