@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+
   validates :name ,presence:true ,uniqueness:true ,length: {in: 2..20}, if: :today_is_friday?
   validates :price, presence:true ,length: {minimum:4 ,too_short: "must have %{count} characters"} , numericality:{greater_than:40}
   validates :weight, numericality:true

@@ -8,8 +8,8 @@
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
-# It's strongly recommended that you check this file into your version control system.
-
+# It's strongly recommended that you check this file into your version control system
+ActiveRecord::Schema.define(version: 2022_06_16_102354) do
 ActiveRecord::Schema.define(version: 2022_06_17_112839) do
 
   create_table "accounts", force: :cascade do |t|
@@ -179,7 +179,6 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.integer "consumer_id", null: false
     t.index ["consumer_id"], name: "index_procuts_on_consumer_id"
   end
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -189,6 +188,7 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
 
   create_table "productsofstore", force: :cascade do |t|
     t.string "identity"
