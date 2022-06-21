@@ -3,18 +3,19 @@
 # app/models/account.rb
 class Account < ApplicationRecord
   belongs_to :User
-  before_validation :befvalid
+  before_validation :enter_branch_name
   validates :accoutnumber, presence: true
-  before_validation :afvalid
+  before_validation :set_branch_name
   before_save :changebranchname
   before_update :details_before_update
   after_update :details_after_update
-  after_save :aftersave
-  def befvalid
+  after_save :display_modifiedname
+  after_commit:display_after_commit_comment
+  def enter_branch_name
     puts 'enter branch name'
   end
 
-  def afvalid
+  def set_branch_name
     self.branchname = 'kphb'
   end
 
@@ -31,11 +32,11 @@ class Account < ApplicationRecord
     puts branchname
   end
 
-  def aftersave
+  def display_modifiedname
     puts "#{branchname}#{ifsccode}"
   end
 
-  def aftercommit
+  def display_after_commit_comment
     puts 'block after commit'
   end
 end

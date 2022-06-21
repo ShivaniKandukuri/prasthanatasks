@@ -5,13 +5,13 @@ class Appointment < ApplicationRecord
   belongs_to :doctor
   belongs_to :patient
   validates :time, presence: true
-  before_validation :displaybeforevalidation
-  after_validation :displayaftervalidation
-  def displaybeforevalidation
+  before_validation :check_day
+  after_validation :set_time
+  def check_day
     puts 'change the timings of apointment' if day.nil?
   end
 
-  def displayaftervalidation
+  def set_time
     self.time = day
     puts time
     puts 'this is the time and day of Appointment'

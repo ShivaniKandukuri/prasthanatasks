@@ -6,10 +6,10 @@ class Employee < ApplicationRecord
   belongs_to :Company
   before_validation :checking_emp_department
   after_validation :name_after_validation
-  before_save :beforesave
-  before_create :beforecreate
-  after_create :aftercreate
-  after_save :aftersave
+  before_save :display_beforesave_block
+  before_create :capitalize_departmentname
+  after_create :display_department_name
+  after_save :display_aftersave_block
 
   def checking_emp_department
     puts 'block before validation'
