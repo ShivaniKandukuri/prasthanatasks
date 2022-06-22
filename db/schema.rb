@@ -8,9 +8,9 @@
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
-# It's strongly recommended that you check this file into your version control system
-ActiveRecord::Schema.define(version: 2022_06_16_102354) do
-ActiveRecord::Schema.define(version: 2022_06_17_112839) do
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 2022_06_22_051813) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "accoutnumber"
@@ -101,6 +101,14 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.integer "ram"
   end
 
+  create_table "distributors", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "company"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "doctors", force: :cascade do |t|
     t.string "name"
     t.integer "age"
@@ -135,6 +143,19 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "leaders", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "magazines", force: :cascade do |t|
     t.string "name"
     t.text "descriptoin"
@@ -146,6 +167,14 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "distance"
+  end
+
+  create_table "ministers", force: :cascade do |t|
+    t.string "name"
+    t.string "age"
+    t.string "party"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "mobiles", force: :cascade do |t|
@@ -163,10 +192,30 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.integer "countofworkers"
   end
 
+  create_table "parties", force: :cascade do |t|
+    t.string "name"
+    t.string "count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.integer "age"
     t.string "health_issue"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "politicians", force: :cascade do |t|
+    t.string "name"
+    t.string "party"
+    t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -179,6 +228,7 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.integer "consumer_id", null: false
     t.index ["consumer_id"], name: "index_procuts_on_consumer_id"
   end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -188,7 +238,6 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
 
   create_table "productsofstore", force: :cascade do |t|
     t.string "identity"
@@ -203,6 +252,15 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.integer "age"
     t.text "bio"
     t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "publishers", force: :cascade do |t|
+    t.string "name"
+    t.string "organization_name"
+    t.string "age"
+    t.string "place"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -252,6 +310,15 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.string "name"
     t.integer "age"
     t.string "gender"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "voters", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "place"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
