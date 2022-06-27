@@ -1,0 +1,7 @@
+<h1> Showing Texts</h1>
+
+<p><strong> Length of text: </strong><%= @text.length %></p>
+
+<%= link_to 'Edit',edit_text_path(@text) %> |
+<%= link_to 'Delete',text_path(@text),method: :delete, data: {confirm: "Are you sure?"} %> |
+<%= link_to 'Return to texts',texts_path %>

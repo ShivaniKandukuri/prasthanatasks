@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+<<<<<<< HEAD
 # app/models/category.rb
 class Category < ApplicationRecord
   validates :name, presence: true
@@ -13,4 +14,7 @@ class Category < ApplicationRecord
   def display_name
     puts name
   end
+=======
+class Category < ApplicationRecord
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
 end

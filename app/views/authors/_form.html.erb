@@ -1,0 +1,28 @@
+<% if @author.errors.any? %>
+<ul>
+  <%@author.errors.full_messages.each do |msg| %>
+     <li><%= msg %><li>
+  <% end %>
+</ul>
+<% end %>
+<%= form_with(model: @author,local:true) do |a| %>
+<p>
+  <%= a.label :First_name %>
+  <%= a.text_field :first_name %>
+</p>
+<p>
+  <%= a.label :Last_name %>
+  <%= a.text_field :Last_name %>
+</p>
+<p>
+  <%= a.label :Age %>
+  <%= a.text_field :age %>
+</p>
+<p>
+  <%= a.label :Gender %>
+  <%= a.text_field :gender %>
+</p>
+<p>
+  <%= a.submit %>
+</p>
+<% end %>

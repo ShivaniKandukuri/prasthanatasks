@@ -1,0 +1,21 @@
+<% if @account.errors.any? %>
+ <ul>
+   <% @account.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+   <% end %>
+ </ul>
+<%end%>
+
+<%= form_with(model: @account,local: true) do |f| %>
+  <p>
+    <%= f.label :accoutnumber %>
+    <%= f.text_field :accoutnumber %>
+  </p>
+  <p>
+    <%= f.label :branchname %>
+    <%= f.text_area :branchname %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<%end%>

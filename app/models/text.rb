@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
 # app/models/text.#!/usr/bin/env ruby -wKU
@@ -16,4 +17,8 @@ class Text < ApplicationRecord
   def destroyed
     puts 'i am a block after destroyed'
   end
+=======
+class Text<ApplicationRecord
+  validates:length,presence:true
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
 end

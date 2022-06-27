@@ -3,6 +3,7 @@
 # app/models/account.rb
 class Account < ApplicationRecord
   belongs_to :User
+<<<<<<< HEAD
   before_validation :enter_branch_name
   validates :accoutnumber, presence: true
   before_validation :set_branch_name
@@ -39,4 +40,9 @@ class Account < ApplicationRecord
   def display_after_commit_comment
     puts 'block after commit'
   end
+=======
+  validates :accoutnumber, presence: true
+  validates :ifsccode, presence: true
+
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
 end

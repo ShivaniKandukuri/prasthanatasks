@@ -1,0 +1,23 @@
+<h1> Displaying detils of particular Author </h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>First Name</strong></th>
+      <th><strong>Last Name</strong></th>
+      <th><strong>Age</strong></th>
+      <th><strong>Gender</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @author.first_name %></td>
+      <td><%= @author.last_name %></td>
+      <td><%= @author.age %></td>
+      <td><%= @author.gender %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit',edit_author_path(@author) %> |

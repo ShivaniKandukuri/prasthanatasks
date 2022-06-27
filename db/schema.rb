@@ -10,9 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 
 ActiveRecord::Schema.define(version: 2022_06_22_051813) do
 ActiveRecord::Schema.define(version: 2022_06_17_112839) do
+=======
+ActiveRecord::Schema.define(version: 2022_06_27_040726) do
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
 
   create_table "accounts", force: :cascade do |t|
     t.integer "accoutnumber"
@@ -23,6 +27,13 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "User_id", null: false
     t.index ["User_id"], name: "index_accounts_on_User_id"
+  end
+
+  create_table "add_restaurant_reference_to_ratings", force: :cascade do |t|
+    t.integer "Restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["Restaurant_id"], name: "index_add_restaurant_reference_to_ratings_on_Restaurant_id"
   end
 
   create_table "appointments", force: :cascade do |t|
@@ -150,6 +161,15 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "invoices", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
   create_table "leaders", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -192,6 +212,20 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
   create_table "offices", force: :cascade do |t|
     t.string "place"
     t.integer "countofworkers"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_offices_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_offices_on_reset_password_token", unique: true
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string "name"
+    t.string "count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "parties", force: :cascade do |t|
@@ -267,9 +301,34 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "purchases", force: :cascade do |t|
+    t.string "name"
+    t.integer "cost"
+    t.integer "quantity"
+    t.integer "invoice_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invoice_id"], name: "index_purchases_on_invoice_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
   create_table "reservations", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "place"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -326,9 +385,11 @@ ActiveRecord::Schema.define(version: 2022_06_17_112839) do
   end
 
   add_foreign_key "accounts", "Users"
+  add_foreign_key "add_restaurant_reference_to_ratings", "Restaurants"
   add_foreign_key "appointments", "doctors"
   add_foreign_key "appointments", "patients"
   add_foreign_key "books", "authors"
   add_foreign_key "employees", "Companies"
   add_foreign_key "procuts", "consumers"
+  add_foreign_key "purchases", "invoices"
 end

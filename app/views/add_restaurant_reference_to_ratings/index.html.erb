@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Add Restaurant Reference To Ratings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Restaurant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @add_restaurant_reference_to_ratings.each do |add_restaurant_reference_to_rating| %>
+      <tr>
+        <td><%= add_restaurant_reference_to_rating.Restaurant_id %></td>
+        <td><%= link_to 'Show', add_restaurant_reference_to_rating %></td>
+        <td><%= link_to 'Edit', edit_add_restaurant_reference_to_rating_path(add_restaurant_reference_to_rating) %></td>
+        <td><%= link_to 'Destroy', add_restaurant_reference_to_rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Add Restaurant Reference To Rating', new_add_restaurant_reference_to_rating_path %>
