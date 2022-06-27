@@ -1,0 +1,16 @@
+<% if @text.errors.any? %>
+<ul>
+  <% @text.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+<%= form_with(model:@text,local:true) do |f| %>
+<p>
+  <%= f.label :Length %>
+  <%= f.text_field :length %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<%end%>
