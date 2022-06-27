@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
 # app/controllerss/accounts
@@ -47,5 +48,15 @@ class AccountsController < ApplicationController
 
   def account_params
     params.require(:account).permit(:accoutnumber, :branchname)
+=======
+class AccountsController < ApplicationController
+  def show
+    @account=Account.find(params[:id])
+  end
+  def index
+    @accounts=Account.all
+  end
+  def new
+>>>>>>> master
   end
 end
