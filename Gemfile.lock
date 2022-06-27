@@ -53,12 +53,17 @@ GEM
     activesupport (6.0.5)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
-      minitest (~> 5.1)
+       
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+<<<<<<< HEAD
     ast (2.4.0)
+=======
+    ast (2.4.2)
+    bcrypt (3.1.18)
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     bindex (0.8.1)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
@@ -76,6 +81,12 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     erubi (1.10.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -100,15 +111,22 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.16.0)
+    minitest (5.16.1)
     msgpack (1.5.2)
     nio4r (2.5.8)
     nokogiri (1.13.6)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+<<<<<<< HEAD
     parallel (1.19.1)
     parser (2.7.0.4)
       ast (~> 2.4.0)
+=======
+    orm_adapter (0.5.0)
+    parallel (1.22.1)
+    parser (3.1.2.0)
+      ast (~> 2.4.1)
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     public_suffix (4.0.7)
     puma (4.3.12)
       nio4r (~> 2.0)
@@ -144,13 +162,21 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
+<<<<<<< HEAD
     rainbow (3.0.0)
+=======
+    rainbow (3.1.1)
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     rake (13.0.6)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.5.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.5)
+<<<<<<< HEAD
     rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -160,6 +186,20 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.1)
+=======
+    rubocop (1.30.1)
+      parallel (~> 1.10)
+      parser (>= 3.1.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.18.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.18.0)
+      parser (>= 3.1.1.0)
+    ruby-progressbar (1.11.0)
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -195,7 +235,13 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+<<<<<<< HEAD
     unicode-display_width (1.6.1)
+=======
+    unicode-display_width (2.1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -223,6 +269,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  devise (~> 4.8, >= 4.8.1)
   hirb
   jbuilder (~> 2.7)
   listen (~> 3.2)
@@ -244,4 +291,4 @@ RUBY VERSION
    ruby 2.6.5p114
 
 BUNDLED WITH
-   2.1.2
+   2.3.16

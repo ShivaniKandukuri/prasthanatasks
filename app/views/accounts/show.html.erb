@@ -4,3 +4,10 @@
 <p><strong> IFSC code: </strong><%= @account.ifsccode %></p>
 <p><strong> Accout Holder Name: </strong><%= @account.accoutholdername %></p>
 <p><strong> Branch Name: </strong><%= @account.branchname %></p>
+<<<<<<< HEAD
+=======
+
+<%= link_to 'Edit',edit_account_path(@account) %> |
+<%= link_to 'Delete',account_path(@account),method: :delete, data: {confirm: "Are you sure?"} %> |
+<%= link_to 'Return to accounts',accounts_path %>
+>>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
