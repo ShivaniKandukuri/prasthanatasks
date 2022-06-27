@@ -1,0 +1,26 @@
+<% if @patient.errors.any? %>
+<ul>
+  <% @patient.erros.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_with(model: @patient,local: true) do |p| %>
+<p>
+  <%= p.label :Name %>
+  <%= p.text_field :name %>
+</p>
+<p>
+  <%= p.label :Age %>
+  <%= p.text_field :age %>
+</p>
+<p>
+  <%= p.label :Health_issue %>
+  <%= p.text_field :health_issue %>
+</p>
+<p>
+  <%= p.submit %>
+</p>
+
+<% end %>

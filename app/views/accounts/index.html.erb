@@ -1,0 +1,22 @@
+<h1> Accounts Listing Page </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Account Number </th>
+      <th> IFSC code </th>
+      <th> Accout Holder Name </th>
+      <th> Branch Name </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each do |account| %>
+    <tr>
+      <td><%= account.accoutnumber %></td>
+      <td><%= account.ifsccode %></td>
+      <td><%= account.accoutholdername %></td>
+      <td><%= account.branchname %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+<h1>Showing text deatils </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Length of texts </th>
+      <th> Actions </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @texts.each do |t| %>
+    <tr>
+      <td><%= t.length %></td>
+      <td><%= link_to 'Show',text_path(t) %></td>
+      <td><%= link_to 'Edit',edit_text_path(t) %></td>
+      <td><%= link_to 'Delete',text_path(t),method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<p>
+  <%= link_to 'create new text',new_text_path %>
+</p>

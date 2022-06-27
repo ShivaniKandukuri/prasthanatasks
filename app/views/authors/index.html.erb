@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+     th, td {
+       border: 1px solid black;
+       border-radius: 10px;
+     }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>First Name</strong></th>
+        <th><strong>Last Name</strong></th>
+        <th><strong>Age</strong></th>
+        <th><strong>Gender</strong></th>
+        <th colspan="2">Actions </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.first_name %></td>
+        <td><%= author.last_name %></td>
+        <td><%= author.age %></td>
+        <td><%= author.gender %></td>
+        <td><%= link_to 'Show',author_path(author) %></td>
+        <td><%= link_to 'Edit',edit_author_path(author) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+</html>
+<p>
+  <%= link_to 'Create new article',new_account_path %>
+</p>

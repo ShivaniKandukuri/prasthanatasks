@@ -1,0 +1,21 @@
+<h1> Patients </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Name</strong></th>
+      <th><strong>Age</strong></th>
+      <th><strong>Health Issue</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @patient.name %></td>
+      <td><%= @patient.age %></td>
+      <td><%= @patient.health_issue %></td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to 'Edit',edit_patient_path(@patient) %>
+<%= link_to 'Delete',patient_path(@patient),method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to 'Return to accounts',patients_path %>

@@ -1,0 +1,1 @@
+json.array! @add_restaurant_reference_to_ratings, partial: "add_restaurant_reference_to_ratings/add_restaurant_reference_to_rating", as: :add_restaurant_reference_to_rating
