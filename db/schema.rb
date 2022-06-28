@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-
-ActiveRecord::Schema.define(version: 2022_06_22_051813) do
-ActiveRecord::Schema.define(version: 2022_06_17_112839) do
-=======
 ActiveRecord::Schema.define(version: 2022_06_27_040726) do
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
 
   create_table "accounts", force: :cascade do |t|
     t.integer "accoutnumber"
@@ -77,7 +71,6 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "type"
   end
 
   create_table "categories_products", id: false, force: :cascade do |t|
@@ -112,6 +105,8 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
     t.text "description"
     t.integer "cost"
     t.integer "ram"
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
   end
 
   create_table "distributors", force: :cascade do |t|
@@ -161,15 +156,12 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "invoices", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
   create_table "leaders", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -186,9 +178,9 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
 
   create_table "malls", force: :cascade do |t|
     t.string "location"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "distance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ministers", force: :cascade do |t|
@@ -206,9 +198,6 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
     t.integer "cost"
   end
 
-  create_table "novels", force: :cascade do |t|
-  end
-
   create_table "offices", force: :cascade do |t|
     t.string "place"
     t.integer "countofworkers"
@@ -219,13 +208,6 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_offices_on_email", unique: true
     t.index ["reset_password_token"], name: "index_offices_on_reset_password_token", unique: true
-  end
-
-  create_table "parties", force: :cascade do |t|
-    t.string "name"
-    t.string "count"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "parties", force: :cascade do |t|
@@ -265,24 +247,6 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
     t.index ["consumer_id"], name: "index_procuts_on_consumer_id"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.decimal "price"
-    t.integer "weight"
-    t.boolean "in_stock"
-    t.date "expiration_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "productsofstore", force: :cascade do |t|
-    t.string "identity"
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "Price"
-  end
-
   create_table "professors", force: :cascade do |t|
     t.string "name"
     t.integer "age"
@@ -301,8 +265,6 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "purchases", force: :cascade do |t|
     t.string "name"
     t.integer "cost"
@@ -318,7 +280,6 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
   create_table "reservations", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
@@ -348,12 +309,6 @@ ActiveRecord::Schema.define(version: 2022_06_27_040726) do
   create_table "students_teachers", id: false, force: :cascade do |t|
     t.integer "student_id", null: false
     t.integer "teacher_id", null: false
-  end
-
-  create_table "tables", force: :cascade do |t|
-    t.string "categories"
-    t.string "name"
-    t.string "type"
   end
 
   create_table "teachers", force: :cascade do |t|

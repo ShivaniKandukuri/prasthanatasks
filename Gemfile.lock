@@ -53,17 +53,13 @@ GEM
     activesupport (6.0.5)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
-
+      minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-<<<<<<< HEAD
-    ast (2.4.0)
-=======
     ast (2.4.2)
     bcrypt (3.1.18)
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     bindex (0.8.1)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
@@ -94,7 +90,6 @@ GEM
     hirb (0.7.3)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
-    jaro_winkler (1.5.4)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -110,23 +105,15 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
     minitest (5.16.1)
     msgpack (1.5.2)
     nio4r (2.5.8)
-    nokogiri (1.13.6)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
-<<<<<<< HEAD
-    parallel (1.19.1)
-    parser (2.7.0.4)
-      ast (~> 2.4.0)
-=======
     orm_adapter (0.5.0)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     public_suffix (4.0.7)
     puma (4.3.12)
       nio4r (~> 2.0)
@@ -134,8 +121,8 @@ GEM
     rack (2.2.3.1)
     rack-proxy (0.7.2)
       rack
-    rack-test (1.1.0)
-      rack (>= 1.0, < 3)
+    rack-test (2.0.1)
+      rack (>= 1.3)
     rails (6.0.5)
       actioncable (= 6.0.5)
       actionmailbox (= 6.0.5)
@@ -162,11 +149,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
-<<<<<<< HEAD
-    rainbow (3.0.0)
-=======
     rainbow (3.1.1)
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     rake (13.0.6)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
@@ -176,18 +159,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
-<<<<<<< HEAD
-    rubocop (0.80.1)
-      jaro_winkler (~> 1.5.1)
-      parallel (~> 1.10)
-      parser (>= 2.7.0.1)
-      rainbow (>= 2.2.2, < 4.0)
-      rexml
-      ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 1.7)
-    ruby-progressbar (1.10.1)
-=======
-    rubocop (1.30.1)
+    rubocop (1.31.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -199,7 +171,6 @@ GEM
     rubocop-ast (1.18.0)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -219,7 +190,7 @@ GEM
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
-    sprockets (4.0.3)
+    sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.4.2)
@@ -235,13 +206,9 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
-<<<<<<< HEAD
-    unicode-display_width (1.6.1)
-=======
-    unicode-display_width (2.1.0)
+    unicode-display_width (2.2.0)
     warden (1.2.9)
       rack (>= 2.0.9)
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -263,7 +230,7 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)

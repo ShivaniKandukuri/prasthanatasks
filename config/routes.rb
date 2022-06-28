@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resource :distributors
-  resources :publishers
+  resources :s
   resources :novels
 #  resources :images
 #  resources :photos
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
 #  resources :politicians
   #resources :voters
 
-  resources :professors
+
   resources :ministers do
     get 'preview', on: :member
   end
@@ -29,10 +28,9 @@ Rails.application.routes.draw do
     get 'search', on: :collection
   end
   resources :photos, controller: 'images'
-  #resources :distributors, as: 'publishers'
+  #resources :distributors, as: 's'
 
 
-=======
   resources :purchases
   resources :invoices
   resources :add_restaurant_reference_to_ratings
@@ -48,5 +46,5 @@ Rails.application.routes.draw do
   resources :texts
   resources :offices
   resources :patients
->>>>>>> 8067c6d88b433112b19adb0855b9042d08d439e5
+
 end
